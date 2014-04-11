@@ -1,0 +1,2 @@
+Ever had a huge collection that takes a long time to render? Do you want to render your views pieces at a time? 
+ProgressiveComposiveView & ProgressiveCollectionView will allow you to render your view an item at a time.
