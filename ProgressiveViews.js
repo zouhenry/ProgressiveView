@@ -15,8 +15,8 @@ var progressive = {
                 that.addItemView(item, ItemView, index);
                 
                 if (index === that.collection.length) {
-                    //since this is on a 
-                    //fire off an event when all views are added
+                    //since this is on a setTimeout, 
+                    //need to know when the last item added
                     that.triggerMethod("showCollection:complete");
                 }
             }, timeout);    //initially 0
