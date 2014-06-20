@@ -1,2 +1,6 @@
-Ever had a huge collection that takes a long time to render? Do you want to render your views pieces at a time? 
+Ever had a huge collection that takes a long time to render? Do you want to render your views an item at a time? 
 ProgressiveComposiveView & ProgressiveCollectionView will allow you to render your view an item at a time.
+
+Version 0.2
+Updated the views to not be timer dependent. This will make it view rendering time dependent instead of browser engine / machine CPU speed dependent.
+Upgraded to be compatible with MarionetteJs 2.0.

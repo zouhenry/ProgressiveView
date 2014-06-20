@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Progressive View Demo</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+</head>
+<body>
+    <div id="pageContent" class="container">
+        <p> Is your page taking too long to display? Progressive View can help!!!
+             Using progressive view, you can provide your users with a more fluid experience </p>
+        <button id="renderProgressive" class="btn btn-primary">Render Progressive</button>
+        <button id="renderRegular" class="btn btn-default">Render Regular</button>
+        <p id="timerContent">Time took to show: <span id="timer"></span></p>
+        <div id="demoContent" />
+    </div>
+    
+    <script type="text/template" id="template_list">
+        <h3 class="page-header">My Collection!!!</h3>
+        <ol id="items_container"></ol>
+    </script>
+    
+    <script type="text/template" id="template_item">
+        Item Id: #<%= id %>, Label: <%= label %>
+    </script>    
+
+    <script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" ></script>
+    <script src="http://underscorejs.org/underscore.js" ></script>
+    <script src="http://backbonejs.org/backbone.js" ></script>
+    <script src="http://marionettejs.com/downloads/backbone.marionette.js" ></script>
+    <script src="src/ProgressiveViews.js"></script>
+    <script src="demo/demo.js" ></script>
+    
+    
+</body>
+</html>
