@@ -21,9 +21,10 @@ var renderIntoDom = function (mainView) {
 	var start = Date.now();
     setTimeout(function () {            //gives the page a chance to clear the previous content
         demoRegion.show(mainView);      //render and display the view in region
-
+        $timerContent.show();
         var end = Date.now();
-        $timerContent.show().find("#timer").text(end - start + "ms");
+        $timer.html(end - start + "ms");
+
     });
 };
 
@@ -41,6 +42,13 @@ var renderProgressive = function () {
 
     var entities = new Backbone.Collection(dummyData);
     var mainView = new ListView({ collection: entities });
+
+
+    var start = Date.now();
+    mainView.listenTo(entities, "showCollection:complete", function () {
+        var end = Date.now();
+        $timer.append(" <-> total time took: " + (end - start) + "ms");
+    });
 
     renderIntoDom(mainView);
 }
@@ -62,6 +70,7 @@ var renderRegular = function () {
     renderIntoDom(mainView);
 }
 var $timerContent = $("#timerContent").hide();
+var $timer = $timerContent.find("#timer");
 var demoRegion = new Marionette.Region({ el: "#demoContent" }); //creates a new region
 $("#renderProgressive").on("click", renderProgressive);         //bind to click event
 $("#renderRegular").on("click", renderRegular);                 //bind to click event

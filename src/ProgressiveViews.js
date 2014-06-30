@@ -18,6 +18,7 @@ var progressive = {
 
                     that.stopListening(that.collection, "render:complete"); //stop listening to the event
                     
+                    that.collection.trigger("showCollection:complete");  //notify when every item has been renderred
                     that.triggerMethod("showCollection:complete");  //notify when every item has been renderred
                 } else {
                     that.renderChild(newIndex);
